@@ -48,9 +48,21 @@ let characters = [
 	'images': 'imgs/gotenks.png', 
 },
 ];
- for (let i=0;i<characters.length;i++) {
- 	let item = `<img class="select" src=${characters[i].images}>`;
- 	
+
+let rnd1 , rnd2, dbz1, dbz2, item;
+// My loop used for my characters object 
+ for ( let i=0;i<characters.length;i++ ) {
+	//gives us a random number  
+	 rnd1 = Math.floor((Math.random()*i)+1);
+	 rnd2 = Math.floor((Math.random()*i)+1);
+	//this sets the varaible to the correct source to be random 
+ 	 dbz1 = `<div id="char1" src=${characters[rnd1].images}>`;	
+ 	 dbz2 = `<div id="char2" src=${characters[rnd2].images}>`;
+
+ 	$('#char1').attr('src', $(`${dbz1}`).attr('src'));
+ 	$('#char2').attr('src', $(`${dbz2}`).attr('src'));
+
+ 	 item = `<img class="select" src=${characters[i].images}>`;
  	console.log(item);
  	if (i % 2 === 0 ) {
 		$('#characters').append(item);
@@ -58,14 +70,6 @@ let characters = [
 		$('#rightCharacters').append(item);
   }
 }
-
-
-let char  = function () {
-	return characters[i].images; 
-};
-
-
-
 
 
 
@@ -97,9 +101,15 @@ switch (e.which) {
 	});
  }
 } else if ( gPos >= g.parent().width() ) {
-	alert('char 1!');
+	$('#balls').animate({
+		'width':'400px'
+	});
+	alert(characters[rnd1].name + " Won!");
 } else if ( vPos >= v.parent().width() ) {
-	alert('char 2');
+	$('#balls').animate({
+		'width':'400px'
+	});
+	alert(characters[rnd2].images + " Won!");
  }
 });
 
@@ -126,21 +136,30 @@ $('.select').on('click', function () {
 	} else if (char2Turn) {
 		$('#char2').attr('src', $(this).attr('src'));
 	}
+	
+	
+});
+
+
+// animation 
+
+
+$(function() {
+
+    let ball = $("#balls");
+    rotate(4500);
+
+        function rotate(degree) {    
+  			ball.css({ 'transform': 'rotate(' + degree + 'deg)'});
+        }
 
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
+      // // For webkit browsers: e.g. Chrome
+      //      $rot.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
+      // // For Mozilla browser: e.g. Firefox
+      //      $rot.css({ '-moz-transform': 'rotate(' + degree + 'deg)'} );
 
 
 

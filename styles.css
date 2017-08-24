@@ -16,6 +16,9 @@ body {
 }
 #balls{
 	float: right;
+	transform: rotate(360);
+	transition-duration: 100s;
+	margin-right: 20px;
 }
 #logo {
 	width: 100%;
@@ -31,6 +34,6 @@ body {
 .select {
 	height: 100px;
 	width: auto;
-	
+
 	
 }

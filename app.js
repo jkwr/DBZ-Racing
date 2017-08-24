@@ -56,13 +56,15 @@ let rnd1 , rnd2, dbz1, dbz2, item;
 	 rnd1 = Math.floor((Math.random()*i)+1);
 	 rnd2 = Math.floor((Math.random()*i)+1);
 	//this sets the varaible to the correct source to be random 
- 	 dbz1 = `<div id="char1" src=${characters[rnd1].images}>`;	
- 	 dbz2 = `<div id="char2" src=${characters[rnd2].images}>`;
+ 	
 
- 	$('#char1').attr('src', $(`${dbz1}`).attr('src'));
- 	$('#char2').attr('src', $(`${dbz2}`).attr('src'));
+ 	$('#char1').attr('src', `${characters[rnd1].images}`);
+ 	$('#char2').attr('src', `${characters[rnd2].images}`);
+	$('#char1').attr('name', `${characters[rnd1].name}`);
+ 	$('#char2').attr('name', `${characters[rnd2].name}`);
 
- 	 item = `<img class="select" src=${characters[i].images}>`;
+
+ 	item = `<img class="select" src=${characters[i].images}>`;
  	console.log(item);
  	if (i % 2 === 0 ) {
 		$('#characters').append(item);
@@ -133,8 +135,10 @@ $('#startBattle').on('click', function () {
 $('.select').on('click', function () {
 	if(char1Turn) {
 		$('#char1').attr('src', $(this).attr('src'));
+		$('#char1').attr('name', $(this).attr('name')); // Will log the person name when selected
 	} else if (char2Turn) {
 		$('#char2').attr('src', $(this).attr('src'));
+		$('#char2').attr('name',$(this).attr('name'));
 	}
 	
 	
@@ -160,8 +164,6 @@ $(function() {
       // // For Mozilla browser: e.g. Firefox
       //      $rot.css({ '-moz-transform': 'rotate(' + degree + 'deg)'} );
 
- $('.tap-target').tapTarget('open');
-  $('.tap-target').tapTarget('close');
 
 });
 

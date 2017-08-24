@@ -1,0 +1,36 @@
+
+body {
+	background-image: url(imgs/battle-ground.jpg);
+	background-size: cover;
+}
+
+#char2, #char1, #balls {
+	margin-top: 20px;
+	height: 150px; 
+	width: 150px;
+}
+ 
+
+#char2, #char1 {
+	position: relative;
+}
+#balls{
+	float: right;
+}
+#logo {
+	width: 100%;
+	height: auto;
+	display: block;
+    margin: 0 auto;
+
+}
+#reset {
+	position: absolute;
+	margin-left: 425px;
+}
+.select {
+	height: 100px;
+	width: auto;
+	
+	
+}

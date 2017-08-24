@@ -14,7 +14,7 @@
   <head>
   	<title>Dragon-Ball-Z</title>
   </head>
-  
+
   <body>
   	<div class="row">
 	  <div class="col s4" id="characters"> </div>
@@ -23,9 +23,10 @@
    	</div>  
    	  	
    	  	<div id="reset" >
-  			<button type="reset"  value="Reset" onClick="location.reload()">Reset</button>
-  			<button id='char1Select'>Player 1 select character</button>
-  			<button id='char2Select'>Player 2 select character</button>
+  			
+  			<button class="waves-effect waves-light btn" id='char1Select'>Player 1 select character</button>
+ <button class="waves-effect waves-red btn"   id="rset" type="reset"  value="Reset" onClick="location.reload()">Reset</button>
+  			<button class="waves-effect waves-light btn" id='char2Select'>Player 2 select character</button>
 		</div>
    <div class="row">  
       <div class="col s12"><img class="responsive-img" src="imgs/Gohan.png"  	  id="char1"></div>
@@ -33,6 +34,12 @@
       <div class="col s12"><img class="responsive-img" src="imgs/Vegeta.png" 	   id='char2'></div>
 
     </div>
+    	<a id="secretChar" class="btn" onclick="Materialize.toast('You must code more to get this', 4000)">Unlock Seceret Character!</a>
+  
+     
+
+
+  </div>
   </body>
   </html>
 
